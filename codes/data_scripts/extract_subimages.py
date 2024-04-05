@@ -12,15 +12,15 @@ import data.util as data_util  # noqa: E402
 
 
 def main():
-    mode = 'pair'  # single (one input folder) | pair (extract corresponding GT and LR pairs)
+    mode = 'single'  # single (one input folder) | pair (extract corresponding GT and LR pairs)
     opt = {}
     opt['n_thread'] = 20
     opt['compression_level'] = 3  # 3 is the default value in cv2
     # CV_IMWRITE_PNG_COMPRESSION from 0 to 9. A higher value means a smaller size and longer
     # compression time. If read raw images during training, use 0 for faster IO speed.
     if mode == 'single':
-        opt['input_folder'] = '../../datasets/DIV2K_train_HR'
-        opt['save_folder'] = '../../datasets/DIV2K_sub'
+        opt['input_folder'] = '../../datasets/val/input'
+        opt['save_folder'] = '../../datasets/val/modified_input'
         opt['crop_sz'] = 480  # the size of each sub-image
         opt['step'] = 240  # step of the sliding crop window
         opt['thres_sz'] = 48  # size threshold
