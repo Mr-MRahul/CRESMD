@@ -1,4 +1,4 @@
-source('/my_fspecial_gaussian.m');
+source('my_fspecial_gaussian.m');
 function generate_mod_LR_bic()
 
 % put test data here
