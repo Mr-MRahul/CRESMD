@@ -1,3 +1,13 @@
+function gauss_filter = my_fspecial_gaussian(filter_size, sigma)
+  % Create a Gaussian filter of size filter_size x filter_size with standard deviation sigma
+  x = -floor(filter_size / 2):floor(filter_size / 2);
+  y = x;
+  [X, Y] = meshgrid(x, y);
+  gauss_filter = exp(-(X.^2 + Y.^2) / (2*sigma^2));
+  gauss_filter = gauss_filter ./ sum(gauss_filter(:));
+end
+
+
 function generate_mod_LR_bic()
 
 % put test data here
@@ -18,7 +28,7 @@ for k_ind = 1:length(kernel_list)
     kernelwidth = kernel_list(k_ind);
     kernel_label = kernel_label_list(k_ind);
     if kernel_label > 0
-        kernel = fspecial('gaussian', 21, kernelwidth);
+        kernel = my_fspecial_gaussian(21, kernelwidth);
     end 
 
     for s_ind = 1:length(noise_list)
