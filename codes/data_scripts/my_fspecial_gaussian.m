@@ -1,5 +1,5 @@
 function my_fspecial_gaussian(filter_xsize, sigxma)
-  filter_size = 21
+  filter_xsize = 21
   % Create a Gaussian filter of size filter_size x filter_size with standard deviation sigma
   x = -floor(filter_xsize / 2):floor(filter_xsize / 2);
   y = x;
