@@ -1,3 +1,4 @@
+1;
 source('my_fspecial_gaussian.m');
 function generate_mod_LR_bic()
 
