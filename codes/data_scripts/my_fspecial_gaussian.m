@@ -1,4 +1,4 @@
-function gauss_filter = my_fspecial_gaussian(filter_size, sigma)
+my_fspecial_gaussian(filter_size, sigma)
   % Create a Gaussian filter of size filter_size x filter_size with standard deviation sigma
   x = -floor(filter_size / 2):floor(filter_size / 2);
   y = x;
